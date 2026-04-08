@@ -24,9 +24,25 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://beratyildirim.com"),
   title: "Berat Yildirim",
   description:
     "Senior Backend Engineer & Music Producer based in Osaka, Japan.",
+  openGraph: {
+    title: "Berat Yildirim",
+    description:
+      "Senior Backend Engineer & Music Producer based in Osaka, Japan.",
+    url: "https://beratyildirim.com",
+    siteName: "Berat Yildirim",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Berat Yildirim",
+    description:
+      "Senior Backend Engineer & Music Producer based in Osaka, Japan.",
+  },
 };
 
 export default function RootLayout({

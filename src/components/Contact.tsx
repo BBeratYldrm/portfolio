@@ -61,7 +61,7 @@ export default function Contact() {
         className="font-mono-custom text-zinc-700 mt-20"
         style={{ fontSize: "0.65rem" }}
       >
-        © 2026 Berat Yildirim
+        © 2026 Berat Yıldırım
       </p>
     </section>
   );

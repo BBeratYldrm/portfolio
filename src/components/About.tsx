@@ -19,7 +19,7 @@ function DownloadIcon({ size = 15 }: { size?: number }) {
 }
 
 const stats = [
-  { value: "6+", label: "Years Experience" },
+  { value: "7+", label: "Years Experience" },
   { value: "3",  label: "Published Songs"  },
   { value: "2",  label: "Apps"             },
 ];
@@ -38,7 +38,7 @@ export default function About() {
         className="fade-in text-zinc-300 leading-relaxed mb-10 max-w-xl"
         style={{ fontSize: "1rem", fontFamily: "var(--font-dm-sans)" }}
       >
-        Senior Backend Engineer with 6+ years of experience designing and
+        Senior Backend Engineer with 7+ years of experience designing and
         building distributed systems, APIs, and microservices — most recently at
         Rakuten in Osaka, Japan. Outside of engineering, I write and produce
         original music and ship mobile apps.

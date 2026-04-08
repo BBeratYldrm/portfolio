@@ -32,7 +32,7 @@ export default function Hero() {
               backgroundClip: "text",
             }}
           >
-            Berat Yildirim
+            Berat Yıldırım
           </h1>
 
           <p
@@ -99,7 +99,7 @@ export default function Hero() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/profile.jpg"
-                alt="Berat Yildirim"
+                alt="Berat Yıldırım"
                 className="absolute inset-0 w-full h-full object-cover"
                 onError={(e) => {
                   e.currentTarget.style.display = "none";
