@@ -52,7 +52,7 @@ export default function OGImage() {
             lineHeight: 1.4,
           }}
         >
-          Senior Backend Engineer &amp; Music Producer
+          Senior Backend Engineer &amp; Musician
         </div>
         <div
           style={{

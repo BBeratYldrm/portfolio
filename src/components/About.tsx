@@ -20,8 +20,8 @@ function DownloadIcon({ size = 15 }: { size?: number }) {
 
 const stats = [
   { value: "7+", label: "Years Experience" },
-  { value: "3",  label: "Published Songs"  },
-  { value: "2",  label: "Apps"             },
+  { value: "3", label: "Published Songs" },
+  { value: "2", label: "Apps" },
 ];
 
 export default function About() {
@@ -38,10 +38,8 @@ export default function About() {
         className="fade-in text-zinc-300 leading-relaxed mb-10 max-w-xl"
         style={{ fontSize: "1rem", fontFamily: "var(--font-dm-sans)" }}
       >
-        Senior Backend Engineer with 7+ years of experience designing and
-        building distributed systems, APIs, and microservices — most recently at
-        Rakuten in Osaka, Japan. Outside of engineering, I write and produce
-        original music and ship mobile apps.
+        Senior Backend Engineer with 7+ years of experience designing scalable distributed systems, APIs, and microservices — most recently at Rakuten in Osaka, Japan.
+        In parallel, I create and release my own music independently — owning the entire pipeline from songwriting and composition to performance and distribution — and develop mobile apps.
       </p>
 
       <div className="fade-in fade-delay-1 grid grid-cols-3 gap-6 py-8 border-t border-b border-zinc-800/60 mb-10 max-w-xs">

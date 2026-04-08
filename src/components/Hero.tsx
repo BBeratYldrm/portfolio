@@ -42,7 +42,7 @@ export default function Hero() {
               fontFamily: "var(--font-dm-sans)",
             }}
           >
-            Senior Backend Engineer &amp; Music Producer
+            Senior Backend Engineer &amp; Musician
           </p>
 
           <p

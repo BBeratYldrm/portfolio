@@ -27,11 +27,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://beratyildirim.com"),
   title: "Berat Yildirim",
   description:
-    "Senior Backend Engineer & Music Producer based in Osaka, Japan.",
+    "Senior Backend Engineer & Musician based in Osaka, Japan.",
   openGraph: {
     title: "Berat Yildirim",
     description:
-      "Senior Backend Engineer & Music Producer based in Osaka, Japan.",
+      "Senior Backend Engineer & Musician based in Osaka, Japan.",
     url: "https://beratyildirim.com",
     siteName: "Berat Yildirim",
     type: "website",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Berat Yildirim",
     description:
-      "Senior Backend Engineer & Music Producer based in Osaka, Japan.",
+      "Senior Backend Engineer & Musician based in Osaka, Japan.",
   },
 };
 
