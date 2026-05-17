@@ -19,10 +19,10 @@ const socials = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 border-t border-zinc-800/60">
+    <section id="contact" className="py-20" style={{ borderTop: "1px solid var(--border-subtle)" }}>
       <p
-        className="font-mono-custom text-zinc-500 uppercase tracking-widest mb-8"
-        style={{ fontSize: "0.7rem" }}
+        className="font-mono-custom uppercase tracking-widest mb-8"
+        style={{ fontSize: "0.7rem", color: "var(--fg-3)" }}
       >
         Contact
       </p>
@@ -30,11 +30,14 @@ export default function Contact() {
       <div className="fade-in mb-10">
         <a
           href="mailto:bberatyldrm@gmail.com"
-          className="group inline-flex items-center gap-3 text-zinc-300 hover:text-white transition-colors duration-200"
+          className="group inline-flex items-center gap-3 transition-colors duration-200"
           style={{
             fontSize: "clamp(1rem, 2.5vw, 1.4rem)",
             fontFamily: "var(--font-dm-sans)",
+            color: "var(--fg-2)",
           }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--fg)")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--fg-2)")}
         >
           <MailIcon size={20} />
           bberatyldrm@gmail.com
@@ -50,7 +53,30 @@ export default function Contact() {
             rel="noopener noreferrer"
             aria-label={label}
             title={label}
-            className="flex items-center justify-center w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 hover:bg-zinc-800 transition-all duration-200"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "2.5rem",
+              height: "2.5rem",
+              borderRadius: "0.5rem",
+              background: "var(--bg-surface)",
+              border: "1px solid var(--border)",
+              color: "var(--fg-2)",
+              transition: "color 0.2s, border-color 0.2s, background 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              const el = e.currentTarget;
+              el.style.color = "var(--fg)";
+              el.style.borderColor = "var(--border-hover)";
+              el.style.background = "var(--bg-hover)";
+            }}
+            onMouseLeave={(e) => {
+              const el = e.currentTarget;
+              el.style.color = "var(--fg-2)";
+              el.style.borderColor = "var(--border)";
+              el.style.background = "var(--bg-surface)";
+            }}
           >
             <Icon size={17} />
           </a>
@@ -58,8 +84,8 @@ export default function Contact() {
       </div>
 
       <p
-        className="font-mono-custom text-zinc-700 mt-20"
-        style={{ fontSize: "0.65rem" }}
+        className="font-mono-custom mt-20"
+        style={{ fontSize: "0.65rem", color: "var(--fg-3)" }}
       >
         © 2026 Berat Yıldırım
       </p>

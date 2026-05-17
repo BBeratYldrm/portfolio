@@ -5,16 +5,49 @@
   --font-mono: var(--font-jetbrains);
 }
 
+/* Light mode — warm off-white, aged paper feel */
+:root {
+  --bg:                 #F2EDE4;
+  --bg-surface:         #EAE5DC;
+  --bg-surface-subtle:  rgba(234, 229, 220, 0.7);
+  --bg-hover:           #DDD8CE;
+  --bg-tag:             rgba(213, 208, 199, 0.8);
+  --fg:                 #1A1714;
+  --fg-2:               #6B6154;
+  --fg-3:               #9B8F7E;
+  --border-subtle:      rgba(26, 23, 20, 0.08);
+  --border:             rgba(26, 23, 20, 0.14);
+  --border-hover:       rgba(26, 23, 20, 0.28);
+  --name-gradient:      linear-gradient(135deg, #1A1714 0%, #6B6154 100%);
+}
+
+/* Dark mode — Dracula-inspired deep blue-gray */
+.dark {
+  --bg:                 #1E1F2B;
+  --bg-surface:         #252636;
+  --bg-surface-subtle:  rgba(37, 38, 54, 0.7);
+  --bg-hover:           #2C2D3F;
+  --bg-tag:             rgba(42, 43, 61, 0.8);
+  --fg:                 #F8F8F2;
+  --fg-2:               #A0A8C0;
+  --fg-3:               #6272A4;
+  --border-subtle:      rgba(98, 114, 164, 0.1);
+  --border:             rgba(98, 114, 164, 0.18);
+  --border-hover:       rgba(98, 114, 164, 0.38);
+  --name-gradient:      linear-gradient(135deg, #F8F8F2 0%, #A0A8C0 100%);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #0a0a0a;
-  color: #ffffff;
+  background-color: var(--bg);
+  color: var(--fg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .font-heading {

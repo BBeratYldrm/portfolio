@@ -21,23 +21,23 @@ const platforms = [
 
 export default function Music() {
   return (
-    <section id="music" className="py-20 border-t border-zinc-800/60">
+    <section id="music" className="py-20" style={{ borderTop: "1px solid var(--border-subtle)" }}>
       <p
-        className="font-mono-custom text-zinc-500 uppercase tracking-widest mb-2"
-        style={{ fontSize: "0.7rem" }}
+        className="font-mono-custom uppercase tracking-widest mb-2"
+        style={{ fontSize: "0.7rem", color: "var(--fg-3)" }}
       >
         Music
       </p>
 
       <h2
-        className="font-heading font-semibold text-white mb-1.5"
-        style={{ fontSize: "clamp(1.5rem, 4vw, 2rem)" }}
+        className="font-heading font-semibold mb-1.5"
+        style={{ fontSize: "clamp(1.5rem, 4vw, 2rem)", color: "var(--fg)" }}
       >
         Original Tracks
       </h2>
       <p
-        className="text-zinc-500 mb-10"
-        style={{ fontSize: "0.9rem", fontFamily: "var(--font-dm-sans)" }}
+        className="mb-10"
+        style={{ fontSize: "0.9rem", fontFamily: "var(--font-dm-sans)", color: "var(--fg-3)" }}
       >
         On major streaming platforms
       </p>
@@ -46,26 +46,29 @@ export default function Music() {
         {songs.map((song, i) => (
           <div
             key={song}
-            className={`fade-in fade-delay-${i + 1} group flex items-center gap-4 px-3 py-3.5 rounded-lg hover:bg-zinc-900 transition-colors duration-200 cursor-default`}
+            className={`fade-in fade-delay-${i + 1} group flex items-center gap-4 px-3 py-3.5 rounded-lg cursor-default`}
+            style={{ transition: "background 0.2s" }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "var(--bg-surface)")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
           >
             <div className="w-6 flex items-center justify-center flex-shrink-0">
               <span
-                className="font-mono-custom text-zinc-600 group-hover:hidden"
-                style={{ fontSize: "0.65rem" }}
+                className="font-mono-custom group-hover:hidden"
+                style={{ fontSize: "0.65rem", color: "var(--fg-3)" }}
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div className="hidden group-hover:flex items-end gap-0.5 h-4">
-                <div className="bar bg-white" />
-                <div className="bar bg-white" />
-                <div className="bar bg-white" />
-                <div className="bar bg-white" />
+                <div className="bar" style={{ background: "var(--fg)" }} />
+                <div className="bar" style={{ background: "var(--fg)" }} />
+                <div className="bar" style={{ background: "var(--fg)" }} />
+                <div className="bar" style={{ background: "var(--fg)" }} />
               </div>
             </div>
 
             <span
-              className="text-zinc-400 group-hover:text-white transition-colors duration-200"
-              style={{ fontSize: "0.9rem", fontFamily: "var(--font-dm-sans)" }}
+              className="transition-colors duration-200"
+              style={{ fontSize: "0.9rem", fontFamily: "var(--font-dm-sans)", color: "var(--fg-2)" }}
             >
               {song}
             </span>
@@ -80,8 +83,25 @@ export default function Music() {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-zinc-400 hover:text-white bg-zinc-900 border border-zinc-800 hover:border-zinc-600 px-4 py-2 rounded-lg transition-all duration-200"
-            style={{ fontSize: "0.85rem", fontFamily: "var(--font-dm-sans)" }}
+            className="flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200"
+            style={{
+              fontSize: "0.85rem",
+              fontFamily: "var(--font-dm-sans)",
+              color: "var(--fg-2)",
+              background: "var(--bg-surface)",
+              border: "1px solid var(--border)",
+              transition: "color 0.2s, border-color 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              const el = e.currentTarget;
+              el.style.color = "var(--fg)";
+              el.style.borderColor = "var(--border-hover)";
+            }}
+            onMouseLeave={(e) => {
+              const el = e.currentTarget;
+              el.style.color = "var(--fg-2)";
+              el.style.borderColor = "var(--border)";
+            }}
           >
             <Icon size={15} />
             {label}

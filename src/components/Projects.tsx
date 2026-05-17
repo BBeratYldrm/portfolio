@@ -4,8 +4,8 @@ const projects = [
     description:
       "A hold-and-release survival arcade mobile game built with React Native, Expo, and Skia for canvas rendering.",
     tags: ["React Native", "Skia", "Expo", "Game Dev"],
-    status: "In Development",
-    link: null,
+    status: "Live",
+    link: "https://apps.apple.com/tr/app/gravity-hunter/id6760577848",
   },
   {
     name: "Tomorrows",
@@ -19,10 +19,10 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 border-t border-zinc-800/60">
+    <section id="projects" className="py-20" style={{ borderTop: "1px solid var(--border-subtle)" }}>
       <p
-        className="font-mono-custom text-zinc-500 uppercase tracking-widest mb-10"
-        style={{ fontSize: "0.7rem" }}
+        className="font-mono-custom uppercase tracking-widest mb-10"
+        style={{ fontSize: "0.7rem", color: "var(--fg-3)" }}
       >
         Projects
       </p>
@@ -31,34 +31,54 @@ export default function Projects() {
         {projects.map((project, i) => (
           <div
             key={project.name}
-            className={`fade-in fade-delay-${i + 1} bg-zinc-900/60 border border-zinc-800 rounded-xl p-6 hover:border-zinc-700 hover:bg-zinc-900 transition-all duration-300`}
+            className={`fade-in fade-delay-${i + 1} rounded-xl p-6`}
+            style={{
+              background: "var(--bg-surface-subtle)",
+              border: "1px solid var(--border)",
+              transition: "border-color 0.3s, background 0.3s",
+            }}
+            onMouseEnter={(e) => {
+              const el = e.currentTarget;
+              el.style.borderColor = "var(--border-hover)";
+              el.style.background = "var(--bg-surface)";
+            }}
+            onMouseLeave={(e) => {
+              const el = e.currentTarget;
+              el.style.borderColor = "var(--border)";
+              el.style.background = "var(--bg-surface-subtle)";
+            }}
           >
             <div className="flex items-start justify-between gap-4 mb-3">
-              <h3 className="font-heading font-semibold text-white text-xl">
+              <h3
+                className="font-heading font-semibold text-xl"
+                style={{ color: "var(--fg)" }}
+              >
                 {project.name}
               </h3>
-              {project.status === "Live" ? (
+              <span
+                className="flex items-center gap-1.5 px-2.5 py-1 rounded-full whitespace-nowrap font-mono-custom"
+                style={{
+                  fontSize: "0.65rem",
+                  color: "#34d399",
+                  background: "rgba(52, 211, 153, 0.1)",
+                  border: "1px solid rgba(52, 211, 153, 0.2)",
+                }}
+              >
                 <span
-                  className="flex items-center gap-1.5 text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 px-2.5 py-1 rounded-full whitespace-nowrap font-mono-custom"
-                  style={{ fontSize: "0.65rem" }}
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                  {project.status}
-                </span>
-              ) : (
-                <span
-                  className="flex items-center gap-1.5 text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2.5 py-1 rounded-full whitespace-nowrap font-mono-custom"
-                  style={{ fontSize: "0.65rem" }}
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-                  {project.status}
-                </span>
-              )}
+                  className="w-1.5 h-1.5 rounded-full"
+                  style={{ background: "#34d399" }}
+                />
+                {project.status}
+              </span>
             </div>
 
             <p
-              className="text-zinc-400 leading-relaxed mb-5"
-              style={{ fontSize: "0.9rem", fontFamily: "var(--font-dm-sans)" }}
+              className="leading-relaxed mb-5"
+              style={{
+                fontSize: "0.9rem",
+                fontFamily: "var(--font-dm-sans)",
+                color: "var(--fg-2)",
+              }}
             >
               {project.description}
             </p>
@@ -68,8 +88,13 @@ export default function Projects() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-mono-custom text-zinc-500 bg-zinc-800/80 border border-zinc-700/40 px-2.5 py-1 rounded-full"
-                    style={{ fontSize: "0.68rem" }}
+                    className="font-mono-custom px-2.5 py-1 rounded-full"
+                    style={{
+                      fontSize: "0.68rem",
+                      color: "var(--fg-3)",
+                      background: "var(--bg-tag)",
+                      border: "1px solid var(--border)",
+                    }}
                   >
                     {tag}
                   </span>
@@ -80,8 +105,10 @@ export default function Projects() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono-custom text-zinc-500 hover:text-white transition-colors duration-200 whitespace-nowrap"
-                  style={{ fontSize: "0.68rem" }}
+                  className="font-mono-custom whitespace-nowrap transition-colors duration-200"
+                  style={{ fontSize: "0.68rem", color: "var(--fg-3)" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--fg)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--fg-3)")}
                 >
                   App Store ↗
                 </a>

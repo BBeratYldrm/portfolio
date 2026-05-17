@@ -6,6 +6,7 @@ import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Music from "@/components/Music";
 import Contact from "@/components/Contact";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   useEffect(() => {
@@ -25,12 +26,15 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="mx-auto max-w-3xl px-6 pb-24">
-      <Hero />
-      <About />
-      <Projects />
-      <Music />
-      <Contact />
-    </main>
+    <>
+      <ThemeToggle />
+      <main className="mx-auto max-w-3xl px-6 pb-24">
+        <Hero />
+        <About />
+        <Projects />
+        <Music />
+        <Contact />
+      </main>
+    </>
   );
 }

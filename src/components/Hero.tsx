@@ -26,7 +26,7 @@ export default function Hero() {
             style={{
               fontSize: "clamp(2.5rem, 7vw, 5rem)",
               lineHeight: 1.05,
-              background: "linear-gradient(135deg, #ffffff 0%, #71717a 100%)",
+              background: "var(--name-gradient)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -36,20 +36,22 @@ export default function Hero() {
           </h1>
 
           <p
-            className="hero-2 text-zinc-400 font-medium mb-5"
+            className="hero-2 font-medium mb-5"
             style={{
               fontSize: "clamp(0.95rem, 2.2vw, 1.15rem)",
               fontFamily: "var(--font-dm-sans)",
+              color: "var(--fg-2)",
             }}
           >
             Senior Backend Engineer &amp; Musician
           </p>
 
           <p
-            className="hero-3 text-zinc-500 leading-relaxed mb-10 max-w-sm"
+            className="hero-3 leading-relaxed mb-10 max-w-sm"
             style={{
               fontSize: "0.95rem",
               fontFamily: "var(--font-dm-sans)",
+              color: "var(--fg-3)",
             }}
           >
             Building scalable systems by day, producing music by night.
@@ -66,7 +68,30 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 aria-label={label}
                 title={label}
-                className="flex items-center justify-center w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 hover:bg-zinc-800 transition-all duration-200"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "2.5rem",
+                  height: "2.5rem",
+                  borderRadius: "0.5rem",
+                  background: "var(--bg-surface)",
+                  border: "1px solid var(--border)",
+                  color: "var(--fg-2)",
+                  transition: "color 0.2s, border-color 0.2s, background 0.2s",
+                }}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget;
+                  el.style.color = "var(--fg)";
+                  el.style.borderColor = "var(--border-hover)";
+                  el.style.background = "var(--bg-hover)";
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget;
+                  el.style.color = "var(--fg-2)";
+                  el.style.borderColor = "var(--border)";
+                  el.style.background = "var(--bg-surface)";
+                }}
               >
                 <Icon size={17} />
               </a>
@@ -80,18 +105,24 @@ export default function Hero() {
               padding: "2px",
               borderRadius: "9999px",
               background:
-                "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.03) 100%)",
-              boxShadow:
-                "0 0 0 1px rgba(255,255,255,0.05), 0 8px 40px rgba(0,0,0,0.5)",
+                "linear-gradient(135deg, var(--border-hover) 0%, var(--border-subtle) 100%)",
+              boxShadow: "0 8px 40px rgba(0,0,0,0.2)",
             }}
           >
             <div
-              className="relative overflow-hidden rounded-full bg-zinc-900 flex items-center justify-center"
-              style={{ width: "clamp(120px, 22vw, 168px)", height: "clamp(120px, 22vw, 168px)" }}
+              className="relative overflow-hidden rounded-full flex items-center justify-center"
+              style={{
+                width: "clamp(120px, 22vw, 168px)",
+                height: "clamp(120px, 22vw, 168px)",
+                background: "var(--bg-surface)",
+              }}
             >
               <span
-                className="font-heading font-bold text-zinc-700 select-none"
-                style={{ fontSize: "clamp(1.25rem, 5vw, 1.75rem)" }}
+                className="font-heading font-bold select-none"
+                style={{
+                  fontSize: "clamp(1.25rem, 5vw, 1.75rem)",
+                  color: "var(--fg-3)",
+                }}
                 aria-hidden="true"
               >
                 BY

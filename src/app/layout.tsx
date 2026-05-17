@@ -51,8 +51,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${dmSans.variable} ${jetbrains.variable}`}
+      className={`dark ${outfit.variable} ${dmSans.variable} ${jetbrains.variable}`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.classList.toggle('dark',t==='dark')})()`,
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
